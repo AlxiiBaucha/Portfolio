@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 text-center px-4 py-10">
+  <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Hello, I’m <span class="text-indigo-600">Rajib Shrestha</span>.</h1>
+  <p class="text-lg md:text-xl text-gray-700 max-w-xl mb-6">
+    I'm a student currently pursuing my learning journey in <span class="font-semibold text-indigo-700">Computer Engineering</span>. I am an enthusiastic learner, always eager to grow and explore.
+  </p>
+  <div class="overflow-hidden rounded-full shadow-lg w-40 h-40 md:w-48 md:h-48 border-4 border-indigo-500">
+    <img src="{% static 'images/rajeev.jpg' %}" alt="Rajib Shrestha" class="w-full h-full object-cover">
+  </div>
+</div>
+{% endblock %}

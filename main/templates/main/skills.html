@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Skills{% endblock %}
+{% block content %}
+
+<div class="text-center mb-10">
+    <h2 class="text-3xl font-bold text-indigo-700">My Skills</h2>
+    <p class="text-gray-600 mt-2">Here are some technologies I work with</p>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  {% for skill in skills %}
+    <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">{{ skill|title }}</h3>
+      <div class="flex justify-center">
+        {% if skill == "django" %}
+          <img src="{% static 'images/django-icon.png' %}" alt="Django" class="h-16 w-16 object-contain">
+        {% elif skill == "python" %}
+          <img src="{% static 'images/Python-Symbol.png' %}" alt="Python" class="h-16 w-16 object-contain">
+        {% elif skill == "html" %}
+          <img src="{% static 'images/html.png' %}" alt="HTML" class="h-16 w-16 object-contain">
+        {% elif skill == "css" %}
+          <img src="{% static 'images/css.png' %}" alt="CSS" class="h-16 w-16 object-contain">
+        {% else %}
+          <img src="{% static 'images/default-skill-icon.png' %}" alt="{{ skill }}" class="h-16 w-16 object-contain">
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
