@@ -2,31 +2,40 @@
 {% load static %}
 {% block title %}Skills{% endblock %}
 {% block content %}
+<div class="relative w-full h-full min-h-screen overflow-hidden">
+  <!-- Background Video -->
+  <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="{% static 'images/bg-video.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<div class="text-center mb-10">
-    <h2 class="text-3xl font-bold text-indigo-700">My Skills</h2>
-    <p class="text-gray-600 mt-2">Here are some technologies I work with</p>
-</div>
-
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-  {% for skill in skills %}
-    <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-      <h3 class="text-xl font-semibold text-gray-800 mb-4">{{ skill|title }}</h3>
-      <div class="flex justify-center">
-        {% if skill == "django" %}
-          <img src="{% static 'images/django-icon.png' %}" alt="Django" class="h-16 w-16 object-contain">
-        {% elif skill == "python" %}
-          <img src="{% static 'images/Python-Symbol.png' %}" alt="Python" class="h-16 w-16 object-contain">
-        {% elif skill == "html" %}
-          <img src="{% static 'images/html.png' %}" alt="HTML" class="h-16 w-16 object-contain">
-        {% elif skill == "css" %}
-          <img src="{% static 'images/css.png' %}" alt="CSS" class="h-16 w-16 object-contain">
-        {% else %}
-          <img src="{% static 'images/default-skill-icon.png' %}" alt="{{ skill }}" class="h-16 w-16 object-contain">
-        {% endif %}
-      </div>
+  <!-- Overlay Content -->
+  <div class="relative z-10 w-full h-full px-6 py-12 bg-black bg-opacity-50 text-white">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-indigo-300">My Skills</h2>
+      <p class="text-lg text-gray-200 mt-2">Here are some technologies I work with</p>
     </div>
-  {% endfor %}
-</div>
 
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {% for skill in skills %}
+        <div class="bg-white bg-opacity-90 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">{{ skill|title }}</h3>
+          <div class="flex justify-center">
+            {% if skill == "django" %}
+              <img src="{% static 'images/django-icon.png' %}" alt="Django" class="h-16 w-16 object-contain">
+            {% elif skill == "python" %}
+              <img src="{% static 'images/Python-Symbol.png' %}" alt="Python" class="h-16 w-16 object-contain">
+            {% elif skill == "html" %}
+              <img src="{% static 'images/html.png' %}" alt="HTML" class="h-16 w-16 object-contain">
+            {% elif skill == "css" %}
+              <img src="{% static 'images/css.png' %}" alt="CSS" class="h-16 w-16 object-contain">
+            {% else %}
+              <img src="{% static 'images/default-skill-icon.png' %}" alt="{{ skill }}" class="h-16 w-16 object-contain">
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}

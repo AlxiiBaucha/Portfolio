@@ -2,9 +2,12 @@
 {% block title %}Contact{% endblock %}
 {% block content %}
 
-<div class="max-w-2xl mx-auto mt-12 p-8 bg-white shadow-lg rounded-xl">
+<!-- Font Awesome CDN (optional for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yF7XKXhTgZfKvqk4fCeOMVc0QxSvki/0U3N4O2KceWjRchAxYNOuw9+RHId1DJDr5UP3g/An7a7wFZCkgxkM8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="max-w-2xl mx-auto mt-12 p-8 bg-white shadow-lg rounded-xl object-cover object-right ">
   <h2 class="text-3xl font-bold text-center text-indigo-700 mb-6">Contact Me</h2>
-  
+
   <form method="POST" action="{% url 'contact' %}" class="space-y-6">
     {% csrf_token %}
     
@@ -37,6 +40,24 @@
       </button>
     </div>
   </form>
+
+<!-- Social Media Links with Icons and Labels -->
+<div class="mt-8 text-center">
+  <p class="text-gray-600 mb-3">Follow me on</p>
+  <div class="flex justify-center gap-6 flex-wrap text-indigo-600 text-lg">
+    <a href="https://www.linkedin.com/in/rajeev-shrestha-39b654188/" target="_blank" class="flex items-center gap-2 hover:text-blue transition">
+      <i class="fab fa-linkedin text-2xl"></i> LinkedIn
+    </a>
+    <a href="https://github.com/AlxiiBaucha" target="_blank" class="flex items-center gap-2 hover:text-black transition">
+      <i class="fab fa-github text-2xl"></i> GitHub
+    </a>
+    <a href="https://twitter.com/your-handle" target="_blank" class="flex items-center gap-2 hover:text-purple transition">
+      <i class="fab fa-twitter text-2xl"></i> Twitter
+    </a>
+    <a href="mailto:rajeevsth34@gmail.com" class="flex items-center gap-2 hover:text-red-800 transition">
+      <i class="fas fa-envelope text-2xl"></i> Email
+    </a>
+  </div>
 </div>
 
 {% endblock %}
